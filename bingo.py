@@ -1,13 +1,22 @@
 import random
 
 class Letter():
+    """
+    Represents a BINGO letter and its associated numbers.
+    """
     def __init__(self,bingo_letter):
+        """
+        Initializes with a BINGO letter and an empty list.
+        """
         self.items = []
         self.bingo_letter = bingo_letter
         
     def add_item(self, item):
+        """
+        Adds a number to the list and returns a message sa.
+        """
         self.items.append(item)
-        return f"Random Selected Number: {self.bingo_letter}-{item}"
+        print(f"Random Selected Number: {self.bingo_letter}-{item}\n")
         
     def show_list(self):
         return f"{self.bingo_letter}=> {', '.join(map(str, self.items))}"
@@ -46,8 +55,8 @@ def play(message):
    
 # Game Loop
 while True:
-    
-    print("START OF BINGO GAME!\n")
+    print("\n\n")
+    print("                  --- START OF BINGO GAME! ---\n")
     
     while True:
         
@@ -68,6 +77,8 @@ while True:
                     if chosen_number in all_num[avail]:
                         all_num[avail].remove(chosen_number)
                         picked.add_item(chosen_number)
+                        
+                        press_key = input("Press any key to continue...")
                         break
             else:
                 print("No more numbers available to pick.")

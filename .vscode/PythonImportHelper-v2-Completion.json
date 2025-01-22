@@ -1,0 +1,56 @@
+[
+    {
+        "label": "random",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "random",
+        "description": "random",
+        "detail": "random",
+        "documentation": {}
+    },
+    {
+        "label": "Letter",
+        "kind": 6,
+        "importPath": "bingo",
+        "description": "bingo",
+        "peekOfCode": "class Letter():\n    \"\"\"\n    Represents a BINGO letter and its associated numbers.\n    \"\"\"\n    def __init__(self,bingo_letter):\n        \"\"\"\n        Initializes with a BINGO letter and an empty list.\n        \"\"\"\n        self.items = []\n        self.bingo_letter = bingo_letter",
+        "detail": "bingo",
+        "documentation": {}
+    },
+    {
+        "label": "play",
+        "kind": 2,
+        "importPath": "bingo",
+        "description": "bingo",
+        "peekOfCode": "def play(message):\n    while True:\n        game = input(f\"\\n{message} \").upper()\n        print()\n        if game in ['Y','N']:\n            break\n        else:\n            print(\"\\nInvalid input. Please enter 'Y' or 'N'.\\n\")\n    return game\n# Game Loop",
+        "detail": "bingo",
+        "documentation": {}
+    },
+    {
+        "label": "ranges",
+        "kind": 5,
+        "importPath": "bingo",
+        "description": "bingo",
+        "peekOfCode": "ranges = {'B': range(1, 16), 'I': range(15, 31), 'N': range(30, 46), 'G': range(45, 61), 'O': range(60, 76)}\n# Created a dictionary that maps each letter to corresponding range of numbers\nall_num = {letter: list(ranges[letter]) for letter in ranges.keys()}\n\"\"\"\nThis is what all_num looks like:\n{\n    'B': [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], \n    'I': [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30], \n    'N': [30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45], \n    'G': [45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60], ",
+        "detail": "bingo",
+        "documentation": {}
+    },
+    {
+        "label": "all_num",
+        "kind": 5,
+        "importPath": "bingo",
+        "description": "bingo",
+        "peekOfCode": "all_num = {letter: list(ranges[letter]) for letter in ranges.keys()}\n\"\"\"\nThis is what all_num looks like:\n{\n    'B': [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], \n    'I': [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30], \n    'N': [30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45], \n    'G': [45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60], \n    'O': [60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75]\n}",
+        "detail": "bingo",
+        "documentation": {}
+    },
+    {
+        "label": "bingo",
+        "kind": 5,
+        "importPath": "bingo",
+        "description": "bingo",
+        "peekOfCode": "bingo = [Letter(letter) for letter in \"BINGO\"]\nb_list, i_list, n_list, g_list, o_list = bingo\ndef play(message):\n    while True:\n        game = input(f\"\\n{message} \").upper()\n        print()\n        if game in ['Y','N']:\n            break\n        else:\n            print(\"\\nInvalid input. Please enter 'Y' or 'N'.\\n\")",
+        "detail": "bingo",
+        "documentation": {}
+    }
+]
