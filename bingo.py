@@ -19,6 +19,9 @@ class Letter():
         print(f"Random Selected Number: {self.bingo_letter}-{item}\n")
         
     def show_list(self):
+        """
+        Returns the list of numbers for the specific BINGO letter.
+        """
         return f"{self.bingo_letter}=> {', '.join(map(str, self.items))}"
     
 # Specify the number ranges assigned to each letter in BINGO
