@@ -23,6 +23,7 @@ class Letter():
         Returns the list of numbers for the specific BINGO letter.
         """
         return f"{self.bingo_letter}=> {', '.join(map(str, self.items))}"
+    
     def empty_list(self):
         """
         Empties the list of numbers.
