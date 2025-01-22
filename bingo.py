@@ -23,6 +23,11 @@ class Letter():
         Returns the list of numbers for the specific BINGO letter.
         """
         return f"{self.bingo_letter}=> {', '.join(map(str, self.items))}"
+    def empty_list(self):
+        """
+        Empties the list of numbers.
+        """
+        self.items = []
     
 # Specify the number ranges assigned to each letter in BINGO
 ranges = {'B': range(1, 16), 'I': range(15, 31), 'N': range(30, 46), 'G': range(45, 61), 'O': range(60, 76)}
@@ -73,15 +78,18 @@ while True:
         
         if play("Do you want to pick a letter (Y/N)?") == 'Y':
             num_available = [item for value in all_num.values() for item in value]
+            
             if num_available:
                 chosen_number = random.choice(num_available)
                 
                 for avail, picked in zip(all_num, bingo):
+                    
                     if chosen_number in all_num[avail]:
                         all_num[avail].remove(chosen_number)
                         picked.add_item(chosen_number)
                         
                         press_key = input("Press any key to continue...")
+                        print()
                         break
             else:
                 print("No more numbers available to pick.")
@@ -93,7 +101,12 @@ while True:
             break
         
     if play("Do you want to set another Bingo Game (Y/N)?") == 'Y':
-        pass
+        
+        all_num = {letter: list(ranges[letter]) for letter in ranges.keys()}
+        
+        for letter in bingo:
+            letter.empty_list()
+        
     else: 
         print("""
                            Goodbye!
